@@ -1,2 +1,50 @@
-# probabilitasjeruk
-Ini merupakan tugas Matakuliah Pengenalan Pola, saya coba mengerjakan semampu saya
+# 🍊 Probabilitas Jeruk
+
+![HTML5](https://img.shields.io/badge/Code-HTML5-orange?logo=html5)
+![CSS3](https://img.shields.io/badge/Style-CSS3-blue?logo=css3)
+![JavaScript](https://img.shields.io/badge/Logic-JavaScript-yellow?logo=javascript)
+![Status](https://img.shields.io/badge/Status-Learning%20Project-brightgreen)
+![License](https://img.shields.io/badge/License-MPL--2.0-lightgrey)
+
+> *Tugas mata kuliah Pengenalan Pola*  
+> Saya mencoba menyelesaikan proyek ini semampu saya — step by step belajar konsep probabilitas dalam bentuk web sederhana 🍀
+
+---
+
+## 🎯 Deskripsi Singkat
+**Probabilitas Jeruk** adalah proyek berbasis web yang dirancang untuk memahami konsep **probabilitas dan pengenalan pola sederhana**.  
+Melalui tampilan web interaktif, pengguna bisa melihat bagaimana data dianalisis dan hasil probabilitasnya ditampilkan secara visual.
+
+---
+
+## 🧩 Fitur
+- 🔢 Menampilkan perhitungan probabilitas secara interaktif  
+- 🎨 Tampilan sederhana dan responsif  
+- ⚡ Berbasis web: bisa dijalankan langsung di browser tanpa instalasi  
+
+---
+
+## ⚙️ Teknologi yang Digunakan
+- 🧱 **HTML5** — struktur halaman  
+- 🎨 **CSS3** — desain dan layout  
+- ⚙️ **JavaScript (Vanilla JS)** — logika dan interaktivitas  
+
+---
+
+## 🚀 Cara Menjalankan
+1. Clone repository ini:
+   ```bash
+   git clone https://github.com/kudaniii/probabilitasjeruk.git
+Buka folder project di komputer kamu
+
+Jalankan file index.html langsung di browser
+
+📚 Catatan
+Proyek ini dibuat untuk keperluan pembelajaran dan latihan dasar dalam memahami konsep probabilitas.
+Tujuan utamanya adalah menggabungkan teori dengan implementasi sederhana berbasis web 💪
+
+👨‍💻 Author
+Created with ☕ & curiosity by daniii
+
+📜 License
+This project is licensed under the MPL-2.0 License.
