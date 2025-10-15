@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prediksi Mutu Buah Jeruk</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    :root {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+        --primary-color: linear-gradient(135deg, #2563eb 0%, #ff8c00 50%, #ffb347 100%);
+        --secondary-color: linear-gradient(135deg, #db1111 0%, #ff7626 100%);
+        --bg-color1: linear-gradient(135deg, #ff8c00 0%, #ffb347 100%);
+        --bg-color2: linear-gradient(135deg, #ffb347 0%, #ff7626 100%);
+        --card-bg: linear-gradient(135deg, #ffffffcc 0%, #c41b1baa 100%);
+        --shadow-color: rgba(228, 18, 18, 0.15);
+        --accent-color: linear-gradient(135deg, #ff7626 0%, #ffb347 100%);
+        --text-color: #222;
+        --muted-color: #ffffff;
+        --input-bg: #fff;
+        --input-border: #ccc;
+        --input-focus-border: #e71597;
+        --input-shadow: rgba(189, 125, 22, 0.5);
+    }
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    body {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 24px 28px;
+      background: linear-gradient(-45deg, var(--bg-color1), var(--bg-color2), var(--bg-color1), var(--bg-color2));
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      color: var(--text-color);
+      line-height: 1.5;
+      font-size: 1rem;
+      user-select: none;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      font-weight: 800;
+      color: var(--primary-color);
+      text-align: center;
+      text-shadow: 1px 1px 3px rgb(37 99 235 / 0.5);
+      letter-spacing: 1.2px;
+    }
+    p.lead {
+      color: var(--muted-color);
+      margin: 0 auto 24px;
+      max-width: 720px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 30px var(--shadow-color);
+      transition: box-shadow 0.3s ease-in-out;
+      backdrop-filter: blur(8px);
+    }
+    .card:hover {
+      box-shadow: 0 12px 50px rgb(37 99 235 / 0.25);
+    }
+    h3 {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--accent-color);
+      margin-bottom: 18px;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 8px;
+      user-select: none;
+    }
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: 700;
+      color: var(--primary-color);
+      user-select: none;
+    }
+    select {
+      width: 100%;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--input-border);
+      font-size: 1rem;
+      color: var(--text-color);
+      background: var(--input-bg);
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+      margin-top: 6px;
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.3s ease-in-out;
+    }
+    select:focus {
+      border-color: var(--input-focus-border);
+      outline: none;
+      box-shadow: 0 0 6px var(--input-shadow);
+    }
+    .row {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+    .col {
+      flex: 1;
+    }
+    button {
+      padding: 14px 20px;
+      border-radius: 12px;
+      border: none;
+      background-color: var(--primary-color);
+      color: white;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      box-shadow: 0 5px 12px rgb(37 99 235 / 0.4);
+      flex: 1;
+    }
+    button:hover {
+      background-color: #1f4bb8;
+      box-shadow: 0 7px 16px rgb(31 75 184 / 0.6);
+    }
+    button:active {
+      transform: translateY(1.5px);
+    }
+    button.secondary {
+      background-color: var(--secondary-color);
+      box-shadow: 0 5px 12px rgb(102 102 102 / 0.3);
+    }
+    button.secondary:hover {
+      background-color: #4b4b4b;
+      box-shadow: 0 7px 16px rgb(75 75 75 / 0.5);
+    }
+    pre {
+      background: #0b1220;
+      color: #a8d0ff;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: auto;
+      box-shadow: inset 0 0 15px rgba(255 255 255 / 0.05);
+      user-select: text;
+      height: 160px;
+      line-height: 1.25;
+    }
+    .status {
+      margin-top: 14px;
+      font-weight: 500;
+      color: var(--muted-color);
+      user-select: none;
+    }
+    .pred {
+      font-weight: 900;
+      font-size: 1.25rem;
+      margin-top: 12px;
+      color: var(--accent-color);
+      user-select: text;
+      text-align: center;
+      text-shadow: 0 0 4px rgb(255 118 38 / 0.8);
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      body {
+        padding: 16px 16px;
+      }
+      .row {
+        flex-direction: column;
+      }
+      button {
+        flex: none;
+        width: 100%;
+      }
+    }
+  </style>
+  <!-- TensorFlow.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.9.0/dist/tf.min.js"></script>
+</head>
+<body>
+  <h1>Prediksi Mutu Buah Jeruk</h1>
+  <p class="lead">Masukkan <strong>Warna</strong> (0-1), <strong>Ukuran</strong> (cm), dan <strong>Kadar Gula</strong> em>Baik / Sedang / Buruk</em>.</p>
+
+  <div class="card" role="region" aria-labelledby="input-section">
+    <h3 id="input-section">Input</h3>
+    <label for="color">Warna (0 = pucat, 1 = oranye pekat): <span id="valColor" aria-live="polite" aria-atomic="true">0.60</span></label>
+    <select id="color" aria-label="Warna">
+      <option value="0" >0.00</option>
+      <option value="0.05">0.05</option>
+      <option value="0.10">0.10</option>
+      <option value="0.15">0.15</option>
+      <option value="0.20">0.20</option>
+      <option value="0.25">0.25</option>
+      <option value="0.30">0.30</option>
+      <option value="0.35">0.35</option>
+      <option value="0.40">0.40</option>
+      <option value="0.45">0.45</option>
+      <option value="0.50">0.50</option>
+      <option value="0.55">0.55</option>
+      <option value="0.60" selected>0.60</option>
+      <option value="0.65">0.65</option>
+      <option value="0.70">0.70</option>
+      <option value="0.75">0.75</option>
+      <option value="0.80">0.80</option>
+      <option value="0.85">0.85</option>
+      <option value="0.90">0.90</option>
+      <option value="0.95">0.95</option>
+      <option value="1.00">1.00</option>
+    </select>
+
+    <label for="size">Ukuran (cm): <span id="valSize" aria-live="polite" aria-atomic="true">7.5</span></label>
+    <select id="size" aria-label="Ukuran">
+      <option value="4.0">4.0</option>
+      <option value="4.1">4.1</option>
+      <option value="4.2">4.2</option>
+      <option value="4.3">4.3</option>
+      <option value="4.4">4.4</option>
+      <option value="4.5">4.5</option>
+      <option value="4.6">4.6</option>
+      <option value="4.7">4.7</option>
+      <option value="4.8">4.8</option>
+      <option value="4.9">4.9</option>
+      <option value="5.0">5.0</option>
+      <option value="5.1">5.1</option>
+      <option value="5.2">5.2</option>
+      <option value="5.3">5.3</option>
+      <option value="5.4">5.4</option>
+      <option value="5.5">5.5</option>
+      <option value="5.6">5.6</option>
+      <option value="5.7">5.7</option>
+      <option value="5.8">5.8</option>
+      <option value="5.9">5.9</option>
+      <option value="6.0">6.0</option>
+      <option value="6.1">6.1</option>
+      <option value="6.2">6.2</option>
+      <option value="6.3">6.3</option>
+      <option value="6.4">6.4</option>
+      <option value="6.5">6.5</option>
+      <option value="6.6">6.6</option>
+      <option value="6.7">6.7</option>
+      <option value="6.8">6.8</option>
+      <option value="6.9">6.9</option>
+      <option value="7.0">7.0</option>
+      <option value="7.1">7.1</option>
+      <option value="7.2">7.2</option>
+      <option value="7.3">7.3</option>
+      <option value="7.4">7.4</option>
+      <option value="7.5" selected>7.5</option>
+      <option value="7.6">7.6</option>
+      <option value="7.7">7.7</option>
+      <option value="7.8">7.8</option>
+      <option value="7.9">7.9</option>
+      <option value="8.0">8.0</option>
+      <option value="8.1">8.1</option>
+      <option value="8.2">8.2</option>
+      <option value="8.3">8.3</option>
+      <option value="8.4">8.4</option>
+      <option value="8.5">8.5</option>
+      <option value="8.6">8.6</option>
+      <option value="8.7">8.7</option>
+      <option value="8.8">8.8</option>
+      <option value="8.9">8.9</option>
+      <option value="9.0">9.0</option>
+      <option value="9.1">9.1</option>
+      <option value="9.2">9.2</option>
+      <option value="9.3">9.3</option>
+      <option value="9.4">9.4</option>
+      <option value="9.5">9.5</option>
+      <option value="9.6">9.6</option>
+      <option value="9.7">9.7</option>
+      <option value="9.8">9.8</option>
+      <option value="9.9">9.9</option>
+      <option value="10.0">10.0</option>
+      <option value="10.1">10.1</option>
+      <option value="10.2">10.2</option>
+      <option value="10.3">10.3</option>
+      <option value="10.4">10.4</option>
+      <option value="10.5">10.5</option>
+      <option value="10.6">10.6</option>
+      <option value="10.7">10.7</option>
+      <option value="10.8">10.8</option>
+      <option value="10.9">10.9</option>
+      <option value="11.0">11.0</option>
+      <option value="11.1">11.1</option>
+      <option value="11.2">11.2</option>
+      <option value="11.3">11.3</option>
+      <option value="11.4">11.4</option>
+      <option value="11.5">11.5</option>
+      <option value="11.6">11.6</option>
+      <option value="11.7">11.7</option>
+      <option value="11.8">11.8</option>
+      <option value="11.9">11.9</option>
+      <option value="12.0">12.0</option>
+    </select>
+
+    <label for="sugar">Kadar Gula (Brix): <span id="valSugar" aria-live="polite" aria-atomic="true">10.0</span></label>
+    <select id="sugar" aria-label="Kadar Gula">
+      <option value="6.0">6.0</option>
+      <option value="6.1">6.1</option>
+      <option value="6.2">6.2</option>
+      <option value="6.3">6.3</option>
+      <option value="6.4">6.4</option>
+      <option value="6.5">6.5</option>
+      <option value="6.6">6.6</option>
+      <option value="6.7">6.7</option>
+      <option value="6.8">6.8</option>
+      <option value="6.9">6.9</option>
+      <option value="7.0">7.0</option>
+      <option value="7.1">7.1</option>
+      <option value="7.2">7.2</option>
+      <option value="7.3">7.3</option>
+      <option value="7.4">7.4</option>
+      <option value="7.5">7.5</option>
+      <option value="7.6">7.6</option>
+      <option value="7.7">7.7</option>
+      <option value="7.8">7.8</option>
+      <option value="7.9">7.9</option>
+      <option value="8.0">8.0</option>
+      <option value="8.1">8.1</option>
+      <option value="8.2">8.2</option>
+      <option value="8.3">8.3</option>
+      <option value="8.4">8.4</option>
+      <option value="8.5">8.5</option>
+      <option value="8.6">8.6</option>
+      <option value="8.7">8.7</option>
+      <option value="8.8">8.8</option>
+      <option value="8.9">8.9</option>
+      <option value="9.0">9.0</option>
+      <option value="9.1">9.1</option>
+      <option value="9.2">9.2</option>
+      <option value="9.3">9.3</option>
+      <option value="9.4">9.4</option>
+      <option value="9.5">9.5</option>
+      <option value="9.6">9.6</option>
+      <option value="9.7">9.7</option>
+      <option value="9.8">9.8</option>
+      <option value="9.9">9.9</option>
+      <option value="10.0" selected>10.0</option>
+      <option value="10.1">10.1</option>
+      <option value="10.2">10.2</option>
+      <option value="10.3">10.3</option>
+      <option value="10.4">10.4</option>
+      <option value="10.5">10.5</option>
+      <option value="10.6">10.6</option>
+      <option value="10.7">10.7</option>
+      <option value="10.8">10.8</option>
+      <option value="10.9">10.9</option>
+      <option value="11.0">11.0</option>
+      <option value="11.1">11.1</option>
+      <option value="11.2">11.2</option>
+      <option value="11.3">11.3</option>
+      <option value="11.4">11.4</option>
+      <option value="11.5">11.5</option>
+      <option value="11.6">11.6</option>
+      <option value="11.7">11.7</option>
+      <option value="11.8">11.8</option>
+      <option value="11.9">11.9</option>
+      <option value="12.0">12.0</option>
+      <option value="12.1">12.1</option>
+      <option value="12.2">12.2</option>
+      <option value="12.3">12.3</option>
+      <option value="12.4">12.4</option>
+      <option value="12.5">12.5</option>
+      <option value="12.6">12.6</option>
+      <option value="12.7">12.7</option>
+      <option value="12.8">12.8</option>
+      <option value="12.9">12.9</option>
+      <option value="13.0">13.0</option>
+      <option value="13.1">13.1</option>
+      <option value="13.2">13.2</option>
+      <option value="13.3">13.3</option>
+      <option value="13.4">13.4</option>
+      <option value="13.5">13.5</option>
+      <option value="13.6">13.6</option>
+      <option value="13.7">13.7</option>
+      <option value="13.8">13.8</option>
+      <option value="13.9">13.9</option>
+      <option value="14.0">14.0</option>
+      <option value="14.1">14.1</option>
+      <option value="14.2">14.2</option>
+      <option value="14.3">14.3</option>
+      <option value="14.4">14.4</option>
+      <option value="14.5">14.5</option>
+      <option value="14.6">14.6</option>
+      <option value="14.7">14.7</option>
+      <option value="14.8">14.8</option>
+      <option value="14.9">14.9</option>
+      <option value="15.0">15.0</option>
+      <option value="15.1">15.1</option>
+      <option value="15.2">15.2</option>
+      <option value="15.3">15.3</option>
+      <option value="15.4">15.4</option>
+      <option value="15.5">15.5</option>
+      <option value="15.6">15.6</option>
+      <option value="15.7">15.7</option>
+      <option value="15.8">15.8</option>
+      <option value="15.9">15.9</option>
+      <option value="16.0">16.0</option>
+    </select>
+
+    <div style="margin-top:12px" class="row">
+      <button id="predictBtn" aria-describedby="predictDesc">Prediksi</button>
+      <button id="trainBtn" class="secondary" aria-describedby="trainDesc">Latih Model (Quick)</button>
+      <button id="resetBtn" class="secondary" aria-describedby="resetDesc">Reset Model</button>
+    </div>
+    <div id="predictDesc" class="sr-only">Tombol Prediksi memprediksi mutu buah jeruk berdasarkan input</div>
+    <div id="trainDesc" class="sr-only">Tombol Latih Model (Quick) melatih model jaringan saraf tiruan secara cepat</div>
+    <div id="resetDesc" class="sr-only">Tombol Reset mereset model dan menghapus hasil pelatihan</div>
+
+    <div class="status" aria-live="polite" aria-atomic="true">
+      <div id="trainLog"></div>
+      <div class="pred" id="prediction">—</div>
+    </div>
+  </div>
+
+  <div class="card" role="region" aria-labelledby="info-settings">
+    <h3 id="info-settings">Informasi & Pengaturan</h3>
+    <p>Dataset contoh dibuat kecil untuk edukasi. Kamu bisa tambahkan data nyata (Seperti berapa banyak buah jeruk sebagai data latihnya) untuk hasil lebih valid.</p>
+    <label>Jumlah Jeruk yanng digunakan: <input id="epochs" type="number" value="60" min="1" max="200" style="width:80px" aria-label="Epochs" /></label>
+    <label>Learning rate: <input id="lr" type="number" step="0.0001" value="0.01" min="0.0001" max="1" style="width:120px" aria-label="Learning rate" /></label>
+  </div>
+
+  <div class="card" role="region" aria-labelledby="console-training">
+    <h3 id="console-training">Console training (ringkas)</h3>
+    <pre id="console" style="height:160px">Ready. Tekan "Latih Model (Quick)" dulu.</pre>
+  </div>
+
+  <script>
+    // ====== DATASET CONTOH (EDUKASI) ======
+    // Format: [warna(0-1), ukuran(cm), brix]
+    // Label: 0=Buruk, 1=Sedang, 2=Baik
+    const rawData = [
+      // Buruk: pucat, kecil, rendah gula
+      {x:[0.1,5.0,6.5], y:0},
+      {x:[0.2,4.8,7.0], y:0},
+      {x:[0.15,5.2,6.0], y:0},
+      // Sedang: warna sedang, ukuran sedang, gula sedang
+      {x:[0.5,7.0,9.0], y:1},
+      {x:[0.6,7.2,10.0], y:1},
+      {x:[0.45,6.8,9.5], y:1},
+      // Baik: oranye pekat, besar, gula tinggi
+      {x:[0.9,10.5,13.0], y:2},
+      {x:[0.85,9.8,12.0], y:2},
+      {x:[0.95,11.0,14.0], y:2},
+      // edge cases
+      {x:[0.7,8.5,11.0], y:2},
+      {x:[0.4,6.0,8.0], y:1}
+    ];
+
+    // UI bindings
+    const colorEl = document.getElementById('color');
+    const sizeEl = document.getElementById('size');
+    const sugarEl = document.getElementById('sugar');
+    const valColor = document.getElementById('valColor');
+    const valSize = document.getElementById('valSize');
+    const valSugar = document.getElementById('valSugar');
+    const predictBtn = document.getElementById('predictBtn');
+    const trainBtn = document.getElementById('trainBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const trainLog = document.getElementById('trainLog');
+    const consoleEl = document.getElementById('console');
+    const predictionEl = document.getElementById('prediction');
+    const epochsEl = document.getElementById('epochs');
+    const lrEl = document.getElementById('lr');
+
+    function updateLabels(){
+      valColor.textContent = Number(colorEl.value).toFixed(2);
+      valSize.textContent = Number(sizeEl.value).toFixed(1);
+      valSugar.textContent = Number(sugarEl.value).toFixed(1);
+      colorEl.setAttribute('aria-valuenow', Number(colorEl.value).toFixed(2));
+      sizeEl.setAttribute('aria-valuenow', Number(sizeEl.value).toFixed(1));
+      sugarEl.setAttribute('aria-valuenow', Number(sugarEl.value).toFixed(1));
+    }
+    colorEl.addEventListener('change', updateLabels);
+    sizeEl.addEventListener('change', updateLabels);
+    sugarEl.addEventListener('change', updateLabels);
+    updateLabels();
+
+    // ====== MODEL ======
+    let model = null;
+    let normParams = null; // for simple min-max normalization
+
+    function computeNormalization(data){
+      // compute min/max per feature
+      const xs = data.map(d=>d.x);
+      const mins = [Infinity,Infinity,Infinity];
+      const maxs = [-Infinity,-Infinity,-Infinity];
+      xs.forEach(v=>{v.forEach((val,i)=>{ if(val<mins[i]) mins[i]=val; if(val>maxs[i]) maxs[i]=val; })});
+      return {mins, maxs};
+    }
+
+    function normalizeSample(sample, params){
+      return sample.map((v,i)=>{
+        const min = params.mins[i];
+        const max = params.maxs[i];
+        if (max - min === 0) return 0.5;
+        return (v - min) / (max - min);
+      });
+    }
+
+    function prepareTrainingTensors(data){
+      normParams = computeNormalization(data);
+      const xs = data.map(d=>normalizeSample(d.x, normParams));
+      const ys = data.map(d=>d.y);
+      const xsTensor = tf.tensor2d(xs);
+      const ysTensor = tf.oneHot(tf.tensor1d(ys,'int32'),3);
+      return {xsTensor, ysTensor};
+    }
+
+    function buildModel(inputShape=3, lr=0.01){
+      const m = tf.sequential();
+      m.add(tf.layers.dense({units:16,inputShape:[inputShape],activation:'relu',kernelInitializer:'heNormal'}));
+      m.add(tf.layers.dense({units:12,activation:'relu',kernelInitializer:'heNormal'}));
+      m.add(tf.layers.dense({units:3,activation:'softmax'}));
+      const optimizer = tf.train.adam(Number(lr));
+      m.compile({optimizer,loss:'categoricalCrossentropy',metrics:['accuracy']});
+      return m;
+    }
+
+    async function trainModel(epochs=60, lr=0.01){
+      if (model==null) model = buildModel(3, lr);
+      const {xsTensor, ysTensor} = prepareTrainingTensors(rawData);
+      consoleEl.textContent = 'Mulai training...\n';
+      const history = await model.fit(xsTensor, ysTensor, {
+        epochs: Number(epochs),
+        shuffle:true,
+        callbacks: {
+          onEpochEnd: async (epoch, logs) => {
+            const s = `Epoch ${epoch+1}/${epochs}  loss=${logs.loss.toFixed(4)}  acc=${(logs.acc||logs.accuracy).toFixed(3)}`;
+            consoleEl.textContent += s + '\n';
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+          }
+        }
+      });
+      xsTensor.dispose(); ysTensor.dispose();
+      consoleEl.textContent += '\nSelesai.';
+      return history;
+    }
+
+    function resetModel(){
+      if(model){
+        model.dispose();
+        model = null;
+        predictionEl.textContent = '—';
+        consoleEl.textContent = 'Model di-reset.';
+      }
+    }
+
+    // Predict: accept raw inputs (un-normalized) and use stored normParams
+    async function predictSample(sample){
+      if (!model) { alert('Model belum dilatih. Tekan "Latih Model (Quick)" dulu.'); return null; }
+      if (!normParams) { alert('Normalisasi belum tersedia. Latih dulu.'); return null; }
+      const norm = normalizeSample(sample, normParams);
+      const t = tf.tensor2d([norm]);
+      const out = model.predict(t);
+      const data = await out.data();
+      t.dispose(); out.dispose();
+      // data is probabilities for classes [buruk, sedang, baik]
+      const idx = data.indexOf(Math.max(...data));
+      return {probs:Array.from(data), classIdx:idx};
+    }
+
+    // Map index to label
+    const labels = ['Buruk','Sedang','Baik'];
+
+    // UI handlers
+    trainBtn.addEventListener('click', async ()=>{
+      trainBtn.disabled = true; predictBtn.disabled = true; resetBtn.disabled = true;
+      trainBtn.textContent = "Melatih...";
+      const ep = Number(epochsEl.value)||60;
+      const lr = Number(lrEl.value)||0.01;
+      try{
+        await trainModel(ep, lr);
+        consoleEl.textContent += '\nModel siap. Coba tekan Prediksi.';
+        trainBtn.textContent = "Latih Model (Quick)";
+      }catch(e){
+        consoleEl.textContent += '\nError: '+e.message;
+        console.error(e);
+        trainBtn.textContent = "Latih Model (Quick)";
+      }
+      trainBtn.disabled = false; predictBtn.disabled = false; resetBtn.disabled = false;
+    });
+
+    predictBtn.addEventListener('click', async ()=>{
+      const sample = [Number(colorEl.value), Number(sizeEl.value), Number(sugarEl.value)];
+      const res = await predictSample(sample);
+      if(!res) return;
+      const p = res.probs.map(v=>v.toFixed(3));
+      predictionEl.textContent = `${labels[res.classIdx]}  —  Prob: [Buruk: ${p[0]} | Sedang: ${p[1]} | Baik: ${p[2]}]`;
+    });
+
+    resetBtn.addEventListener('click', ()=>{
+      if(confirm('Reset model?')) resetModel();
+    });
+
+    // auto-train small on load for better demo experience
+    (async function autoTrain(){
+      consoleEl.textContent = 'Auto-training singkat untuk demo...';
+      try{ await trainModel(30, Number(lrEl.value)); consoleEl.textContent += '\nAuto-train selesai.'; }catch(e){ consoleEl.textContent += '\nAuto-train gagal.' }
+    })();
+  </script>
+</body>
+</html>
