@@ -1,8 +1,5 @@
 # 🍊 Probabilitas Jeruk
 
-![HTML5](https://img.shields.io/badge/Code-HTML5-orange?logo=html5)
-![CSS3](https://img.shields.io/badge/Style-CSS3-blue?logo=css3)
-![JavaScript](https://img.shields.io/badge/Logic-JavaScript-yellow?logo=javascript)
 ![Status](https://img.shields.io/badge/Status-Learning%20Project-brightgreen)
 ![License](https://img.shields.io/badge/License-MPL--2.0-lightgrey)
 
@@ -25,19 +22,20 @@ Melalui tampilan web interaktif, pengguna bisa melihat bagaimana data dianalisis
 ---
 
 ## ⚙️ Teknologi yang Digunakan
-- 🧱 **HTML5** — struktur halaman  
-- 🎨 **CSS3** — desain dan layout  
-- ⚙️ **JavaScript (Vanilla JS)** — logika dan interaktivitas  
+- 🧱 **HTML** — struktur halaman  
+- 🎨 **CSS** — desain dan layout  
+- ⚙️ **JavaScript** — logika dan interaktivitas  
 
 ---
 
 ## 🚀 Cara Menjalankan
 1. Clone repository ini:
    ```bash
-   git clone https://github.com/kudaniii/probabilitasjeruk.git
-Buka folder project di komputer kamu
+   [git clone https://github.com/kudaniii/probabilitasjeruk.git]
+   
+2. Buka folder project di komputer kamu
 
-Jalankan file index.html langsung di browser
+3. Jalankan file index.html langsung di browser
 
 📚 Catatan
 Proyek ini dibuat untuk keperluan pembelajaran dan latihan dasar dalam memahami konsep probabilitas.
