@@ -48,7 +48,7 @@ Created with ☕ & curiosity by daniii
 
 
 📸 ScreenShot
-https://raw.githubusercontent.com/kudaniii/probabilitasjeruk/a8c7546726d9e4881bf8d678015ba0e209258cb6/Cuplikan%20layar%202025-10-15%20120508.png
+![Preview]https://raw.githubusercontent.com/kudaniii/probabilitasjeruk/a8c7546726d9e4881bf8d678015ba0e209258cb6/Cuplikan%20layar%202025-10-15%20120508.png
 
 
 📜 License
